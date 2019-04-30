@@ -13,7 +13,7 @@ $db_found = mysqli_select_db($db_handle, $database);
 
 if (!empty($_POST)) {
     //echo '<p>Le bouton enfoncé est le bouton ';
-    if (isset($_POST['button1'])) {
+    if (isset($_POST['Search'])) {
         if ($db_found) {
             $sql = "SELECT * FROM vendeurs";
             if ($pseudo != "") {
@@ -50,7 +50,7 @@ if (!empty($_POST)) {
     
 
 
-    elseif (isset($_POST['button2'])) {
+    elseif (isset($_POST['Add'])) {
         if ($db_found) {
             $sql = "SELECT * FROM vendeurs";
             if ($pseudo != "") {
@@ -105,7 +105,7 @@ if (!empty($_POST)) {
     
 
 
-    elseif (isset($_POST['button3'])) {
+    elseif (isset($_POST['Delete'])) {
 
         if ($db_found) {
             $sql = "SELECT * FROM vendeurs";
