@@ -36,7 +36,7 @@ if (!empty($_POST)) {
                     //echo "1";
 
                     //echo "<br>";
-                    include("formulaireAdmin.html");
+                    include("AccueilAdmin.html");
                 }
             }
         } else {
