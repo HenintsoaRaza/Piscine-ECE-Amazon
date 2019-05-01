@@ -35,11 +35,12 @@ if (!empty($_POST)) {
             } else {
 //on trouve le livre recherché
                 while ($data = mysqli_fetch_assoc($result)) {
-                    echo "Pseudo: " . $data['pseudo'] . "<br>";
-                    echo "Nom: " . $data['nom'] . "<br>";
-                    echo "Email: " . $data['email'] . "<br>";
+                    //echo "Pseudo: " . $data['pseudo'] . "<br>";
+                    //echo "Nom: " . $data['nom'] . "<br>";
+                    //echo "Email: " . $data['email'] . "<br>";
 
-                    echo "<br>";
+                    //echo "<br>";
+                    include("formulaireAdmin.html");
                 }
             }
         } else {
