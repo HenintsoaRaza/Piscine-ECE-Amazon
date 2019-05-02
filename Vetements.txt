@@ -1,0 +1,26 @@
+1)
+Nom : Robe manches courtes
+Description : Robe en marinière bleue et blanche, manches courtes, de la marque Tommy Hilfiger.
+Type : Robe
+Sexe : Femme
+Prix : 72,92
+Quantité : ? 
+Vendeur : Karlito
+
+2)
+Nom : Chemise Casual
+Description : Chemise à fleurs bleues et jaunes, manches courtes et 100% coton.
+Type : Chemise
+Sexe : Homme
+Prix : 52,65
+Quantité : ?
+Vendeur : Paulito
+
+3)
+Nom : Jean bleu 
+Description : Jean bleu Levi's 00501, 100% coton.
+Type : Jean
+Sexe : Homme
+Prix : 53,19
+Quantité : ?
+Vendeur : Heninito

@@ -1,0 +1,21 @@
+1)
+Nom : Brol
+Description: Album de l'artiste Angèle, composé de 12 titres comme le prestigieux "Balance ton quoi".
+Prix : 12,99
+Qté : ?
+Vendeur : Karlito
+
+2)
+Nom : Deux Freres
+Description: Album tant attendu du groupe de rap français PNL, composé de 17 titres inédits dont "AU DD" ou encore "Kuta Ubud".
+Prix : 12,99
+Qté : ?
+Vendeur : Paulito
+
+3)
+Nom : Queen Greatest Hits
+Description: Album CD regroupant les plus grands hits du prestigieux groupe Queen, incluant des titres de légende comme "I Want To Break Free" ou "We Will Rock You".
+Prix : 16,99
+Qté : ?
+Vendeur : Heninito
+

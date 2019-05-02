@@ -1,0 +1,27 @@
+1)
+Pseudo : Karlito
+Email : karlito@ece.fr
+Nom : Karl
+Photo : ?
+Image : ?
+
+2)
+Pseudo : Paulito
+Email : paulito@ece.fr
+Nom : Paulo
+Photo : ?
+Image : ?
+
+3)
+Pseudo : Heninito
+Email : heninito@ece.fr
+Nom : Henin
+Photo : ? 
+Image : ?
+
+4)
+Pseudo : Admin
+Email : admin@ece.fr
+Nom : Administrateur
+Photo : ?
+Image : ?

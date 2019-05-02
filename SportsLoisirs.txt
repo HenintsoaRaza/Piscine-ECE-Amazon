@@ -1,0 +1,20 @@
+1) 
+Nom : Panier basketball
+Description : Panier de basketball jaune, réglable entre 1,65m et 2,20m.
+Prix : 139,99
+Qté : ?
+Vendeur : Karlito
+
+2) 
+Nom : Bracelet
+Description : Bracelet capteur d'activité Bodyshape AS 81, rose.
+Prix : 44,90
+Qté : ?
+Vendeur : Paulito
+
+3) 
+Nom : Trampoline 
+Description : Mini trampoline cardio fitness PFITRMP17.
+Prix : 48,99
+Qté : ?
+Vendeur : Heninito
