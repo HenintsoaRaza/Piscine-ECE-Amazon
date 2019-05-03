@@ -23,11 +23,12 @@
 
 </head>
 <body>
-	<form action="coadmin.php" method="post">
+
+	<form action="admin2.php" method="post">
 <nav class="navbar navbar-expand-md">
 	
  <a class="navbar-brand">
-  <img src="newlogo.png" alt="logo">
+  <img src="logooo.jpg" alt="logo">
 </a>
 
  <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
@@ -38,34 +39,14 @@
  <div class="collapse navbar-collapse" id="main-navigation">
  <ul class="navbar-nav">
 
- <li class="nav-item"><a class="nav-link" href="Page_accueil_amazon.html"> <i class="fa fa-home" aria-hidden="true"></i> Accueil</a></li>
+ <li class="nav-item"><a class="nav-link" href="#"> Gerer les vendeurs </a></li>
+ <li class="nav-item"><a class="nav-link" href="#"> Gerer les produits </a></li>
+  <a class="btn btn-warning" href="admin.html"> Se deconnecter <i class="fa fa-power-off" aria-hidden="true"></i> </a>
 
-
- <li class="nav-item dropdown">
- 	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
-
- 	Categories 
- </a>
-
- 	<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-    <a class="dropdown-item" href="CategorieSport.html">Sport & Loisirs <i class="fa fa-bicycle" aria-hidden="true"></i></a>
-    <a class="dropdown-item" href="CategorieVetements.html">Vetement <i class="fa fa-shopping-bag" aria-hidden="true"></i></a>
-     <a class="dropdown-item" href="CategorieMusique.html">Musique <i class="fa fa-music" aria-hidden="true"></i></a>
-      <a class="dropdown-item" href="CategorieLivres.html">Livres <i class="fa fa-book" aria-hidden="true"></i></a>
-</div>
-
- </li>
  
- <li class="nav-item"><a class="nav-link" href="ventes flash.html">Ventes Flash <i class="fa fa-bolt" aria-hidden="true"></i></a></li>
- <li class="nav-item"><a class="nav-link" href="vendre.html">Vendre</a></li>
- <li class="nav-item"><a class="nav-link" href="votre compte.html">Votre Compte</a></li>
- <li class="nav-item"><a class="nav-link" style="color: red">Admin <i class="fa fa-lock" aria-hidden="true" style="color: red;"></i></a></li>
-  <li  <a class="btn btn-warning" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Panier</a> </li>
-
-
-
  </ul>
  </div>
+
 </nav>
 
 <header class="page-header header container-fluid">	
@@ -74,17 +55,36 @@
 <div class="container features-compte">
  <div class="row">
 <div class="col-lg-5 col-md-5 col-sm-12">
-<div class="rectangle container-fluid">
- 	<h3 class="feature-title-votre-compte">Connectez-vous en tant que Admin :</h3> <br>
+
+ 	<h3 class="feature-title-votre-compte">Ajouter un Produit :</h3> <br>
+
 <div class="form-group">
-<input  type="email" class="form-control" placeholder= "Email:" name="email">
+<input  type="number" class="form-control" placeholder= "ID" name="ID">
 </div>
 <div class="form-group">
- <input type="password" class="form-control" placeholder="Votre mot de passe:" name="motdepasse">
+ <input type="text" class="form-control" placeholder="Nom" name="Nom">
 </div>
-<input type="submit" class="btn btn-secondary btn-block" value="Se connecter" name="Rechercher">
+<div class="form-group">
+<input  type="text" class="form-control" placeholder= "Nomphoto" name="Nomphoto">
+</div>
+<div class="form-group">
+<input  type="text" class="form-control" placeholder= "Nomphoto" name="Nomphoto">
+</div>
+<div class="form-group">
+<input  type="text" class="form-control" placeholder= "Nomphoto" name="Nomphoto">
+</div>
+<div class="form-group">
+<input  type="text" class="form-control" placeholder= "Nomphoto" name="Nomphoto">
+</div>
+<div class="form-group">
+<input  type="text" class="form-control" placeholder= "Nomphoto" name="Nomphoto">
+</div>
+
+<input type="submit" class="btn btn-secondary btn-block" value="Ajouter" name="Add"> 
+<input type="submit" class="btn btn-secondary btn-block" value="Supprimer" name="Delete">
+<input type="submit" class="btn btn-secondary btn-block" value="Rechercher" name="Search">
+
  </div>
-</div>
 </div>
 </div>
 </header>

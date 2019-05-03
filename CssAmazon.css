@@ -6,17 +6,41 @@ body {
 
 /*--- navigation bar ---*/
 .navbar {
- background: white;
+ background: black;
 
+}
+
+
+
+.rectangle{
+
+margin-top: 100px;
+height: 300px;
+width: 350px;
+background:transparent;
+border: solid;
+border-width: 1px;
+}
+.rectangle-formulaire
+{
+margin-top: 70px;
+height: 400px;
+width: 350px;
+background:transparent;
+border: solid;
+border-width: 1px;
 }
 
 .nav-link, .navbar-brand {
- color: black;
+ color: white;
  cursor: pointer;
+
 
 }
 .nav-link {
+	text-align: center;
  margin-left: 1em !important;
+ 
 }
 .nav-link:hover {
  color: red;
@@ -26,17 +50,20 @@ body {
 
 
 }
-.navbar-toggler{
+.navbar-toggler:hover{
 
 background-color: black;
+color: red;
+
 }
 
 .header {
 
- background-image: url('fond.jpg');
+ background-image: url('page-blanche.jpg');
  background-size: cover;
  background-position: center;
  position: relative;
+
 }
 
 .overlay {
@@ -46,9 +73,8 @@ background-color: black;
  min-width: 100%;
  left: 0px;
  top: 0px;
- background-color: rgba(0, 0, 0, 0.7);
+ background-color: rgba(0, 0, 0, 0.35);
 }
-
 
 .description {
  right: -5%;
@@ -58,35 +84,71 @@ background-color: black;
  text-align: center;
 }
 .description h1 {
- color: orange;
+ color: black;
  font-size: 65px;
 font-style: oblique;
+
 }
 
 .features {
  padding: 1em;
  position: relative;
 
+
  }
+
+
+
  .features-compte {
+
 position: relative;
 padding-left: 400px;
 padding-top: 120px;
+color: black;
+
 
 }
 .feature-title {
- color: white;
- font-size: 1.3rem;
- font-weight: 700;
-margin-top: 300px;
+ color: black;
+ font-size: 40;
+ font-weight: 500;
+margin-bottom: 350px;
+text-align: center;
+position: center;
+
 
 }
 
+.carousel-item
+{
+	margin-top: 150px;
+	margin-left: 300px;
+}
+
+.img-fluid
+{
+	margin-top: 350px;
+}
+
+.img-fluid-categorie
+{
+	margin-right: 20px;
+	margin-top: 200px;
+	height: 280px;
+	width: 250px;
+}
+
+.btn
+{
+
+	margin-right: 30px;
+}
+
 .feature-title-votre-compte {
- color: orange;
+ color: white;
  font-size: 1.3rem;
  font-weight: 700;
-margin-top: 100px;
+padding-top: 25px;
 text-align: center;
 
 }
@@ -96,6 +158,16 @@ text-align: center;
  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
  margin-bottom: 16px;
 }
+
+
+
+
+
+
+
+
+
+
 
 .page-footer {
  background-color: #444;
