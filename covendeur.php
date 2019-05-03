@@ -33,9 +33,15 @@ if (!empty($_POST)) {
             } else {
 //on trouve le livre recherché
                 while ($data = mysqli_fetch_assoc($result)) {
-                    echo "Pseudo: " . $data['pseudo'] . "<br>";
+                    //echo "Pseudo: " . $data['pseudo'] . "<br>";
                     //echo "Nom: " . $data['nom'] . "<br>";
-                    echo "Email: " . $data['email'] . "<br>";
+                    //echo "Email: " . $data['email'] . "<br>";
+
+                    $_SESSION['email'] = $data['email'];
+                    $_SESSION['pseudo'] = $data['pseudo'];
+                    $_SESSION['Nomphoto'] = $data['Nomphoto'];
+
+                    include("accueilvendeur.php");
 
                     //echo "<br>";
                     //include("formulaireAdmin.html");
