@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Ven 03 Mai 2019 à 00:21
+-- Généré le :  Ven 03 Mai 2019 à 23:26
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -83,16 +83,16 @@ CREATE TABLE IF NOT EXISTS `livre` (
   `quantite_vendue` smallint(5) unsigned NOT NULL,
   `vendeur` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=400004 ;
 
 --
 -- Contenu de la table `livre`
 --
 
 INSERT INTO `livre` (`id`, `nom`, `description`, `prix`, `quantite_vendue`, `vendeur`) VALUES
-(000000, 'Luca', 'Partout, il y a la terreur.\r\nCelle d''une jeune femme dans une chambre d''hôtel sordide, ventre loué à prix d''or pour couple en mal d''enfant, et qui s''évapore comme elle était arrivée. \r\nPartout, il y a la terreur.\r\nCelle d''un corps mutilé qui gît au fond d''une fosse creusée dans la forêt. \r\nPartout, il y a la terreur.\r\nCelle d''un homme qui connaît le jour et l''heure de sa mort. \r\nEt puis il y a une lettre, comme un manifeste, et qui annonce le pire. \r\nS''engage alors, pour l''équipe du commandant Sharko, une sinistre course contre la montre. \r\nC''était écrit : l''enfer ne fait que commencer. ', 22.90, 10, 'Karlito'),
-(000001, 'Devenir', '"Il y a encore tant de choses que j''ignore au sujet de l''Amérique, de la vie, et de ce que l''avenir nous réserve. Mais je sais qui je suis. Mon père, Fraser, m''a appris à travailler dur, à rire souvent et à tenir parole. Ma mère, Marian, à penser par moi-même et à faire entendre ma voix. Tous les deux ensemble, dans notre petit appartement du quartier du South Side de Chicago, ils m''ont aidée à saisir ce qui faisait la valeur de notre histoire, de mon histoire, et plus largement de l''histoire de notre pays. Même quand elle est loin d''être belle et parfaite. Même quand la réalité se rappelle à vous plus que vous ne l''auriez souhaité. Votre histoire vous appartient, et elle vous appartiendra toujours. À vous de vous en emparer."\r\nMichelle Obama', 24.50, 20, 'Paulito'),
-(000002, 'L''archipel français', 'En quelques décennies, tout a changé. La France, à l''heure des gilets jaunes, n''a plus rien à voir avec cette nation soudée par l''attachement de tous aux valeurs d''une république une et indivisible. Et lorsque l''analyste s''essaie à rendre compte de la dynamique de cette métamorphose, c''est un archipel d''îless''ignorant les unes les autres qui se dessine sous les yeux fascinés du lecteur.\r\n', 22.00, 15, 'Heninito');
+(400000, 'Luca', 'Partout, il y a la terreur.\r\nCelle d''une jeune femme dans une chambre d''hôtel sordide, ventre loué à prix d''or pour couple en mal d''enfant, et qui s''évapore comme elle était arrivée. \r\nPartout, il y a la terreur.\r\nCelle d''un corps mutilé qui gît au fond d''une fosse creusée dans la forêt. \r\nPartout, il y a la terreur.\r\nCelle d''un homme qui connaît le jour et l''heure de sa mort. \r\nEt puis il y a une lettre, comme un manifeste, et qui annonce le pire. \r\nS''engage alors, pour l''équipe du commandant Sharko, une sinistre course contre la montre. \r\nC''était écrit : l''enfer ne fait que commencer. ', 22.90, 10, 'Karlito'),
+(400001, 'Devenir', '"Il y a encore tant de choses que j''ignore au sujet de l''Amérique, de la vie, et de ce que l''avenir nous réserve. Mais je sais qui je suis. Mon père, Fraser, m''a appris à travailler dur, à rire souvent et à tenir parole. Ma mère, Marian, à penser par moi-même et à faire entendre ma voix. Tous les deux ensemble, dans notre petit appartement du quartier du South Side de Chicago, ils m''ont aidée à saisir ce qui faisait la valeur de notre histoire, de mon histoire, et plus largement de l''histoire de notre pays. Même quand elle est loin d''être belle et parfaite. Même quand la réalité se rappelle à vous plus que vous ne l''auriez souhaité. Votre histoire vous appartient, et elle vous appartiendra toujours. À vous de vous en emparer."\r\nMichelle Obama', 24.50, 20, 'Paulito'),
+(400002, 'L''archipel français', 'En quelques décennies, tout a changé. La France, à l''heure des gilets jaunes, n''a plus rien à voir avec cette nation soudée par l''attachement de tous aux valeurs d''une république une et indivisible. Et lorsque l''analyste s''essaie à rendre compte de la dynamique de cette métamorphose, c''est un archipel d''îless''ignorant les unes les autres qui se dessine sous les yeux fascinés du lecteur.\r\n', 22.00, 15, 'Heninito');
 
 -- --------------------------------------------------------
 
@@ -173,12 +173,12 @@ INSERT INTO `photo` (`nom_fichier`, `id`) VALUES
 ('Chemise1.jpg', 200001),
 ('Chemise2.jpg', 200001),
 ('Deuxfreres.png', 100001),
-('Devenir.jpg', 000001),
+('Devenir.jpg', 400001),
 ('Jean1.jpg', 200002),
 ('Jean2.jpg', 200002),
 ('Jean3.jpg', 200002),
-('Larchipel.jpg', 000002),
-('Luca.jpg', 000000),
+('Larchipel.jpg', 400002),
+('Luca.jpg', 400000),
 ('panier1.jpg', 300000),
 ('panier2.jpg', 300000),
 ('Queen.jpg', 100003),
