@@ -1,12 +1,12 @@
 <?php
-$database = "admin";
+$database = "admin3";
 //$Nomphoto = "Queen.jpg";
 $db_handle = mysqli_connect('localhost', 'root', '');
 $db_found = mysqli_select_db($db_handle, $database);
 
 if ($db_found) {
 
-	$sql = "SELECT * FROM vetement";
+	$sql = "SELECT * FROM photo";
 //on cherche le livre avec les paramètres titre et auteur
 
 	$sql .= " WHERE id LIKE '300001'";
@@ -23,12 +23,83 @@ if ($db_found) {
 
 //on trouve le livre recherché
 
-		while ($data = mysqli_fetch_assoc($result)) {
+		//while ($data = mysqli_fetch_assoc($result)) {
+		$data = mysqli_fetch_assoc($result);
 
-for (int i=1; i<4 ; i++) { 
+for ($data['numphoto']=1; $data['numphoto']<4 ; $data['numphoto']++) { 
 	
 
-			$name[i] = "SELECT  nom_fichier FROM photo WHERE id LIKE'300001' and numphoto LIKE 'i'";
+			if($data['numphoto']==1)
+			{
+				
+
+
+				$nouvname = "SELECT nom_fichier FROM photo";
+				$nouvname .= " WHERE numphoto like '1'";
+				$result2 = mysqli_query($db_handle, $sql);
+				if (mysqli_num_rows($result2) == 0) {
+
+//le livre recherché n'existe pas
+		echo "Book not found";
+	} else {
+
+//on trouve le livre recherché
+
+		//while ($data = mysqli_fetch_assoc($result)) {
+		$data2 = mysqli_fetch_assoc($result);
+
+				$name[$data['numphoto']] = $data2['nom_fichier'];
+
+				//$name[$data['numphoto']] = "SELECT nom_fichier FROM photo WHERE numphoto like '2'";
+			}
+			}
+
+			if($data['numphoto']==2)
+			{
+
+				//$name[$data['numphoto']] = $data['nom_fichier'];
+
+				$nouvname = "SELECT nom_fichier FROM photo";
+				$nouvname .= " WHERE numphoto like '2'";
+				$result2 = mysqli_query($db_handle, $sql);
+				if (mysqli_num_rows($result2) == 0) {
+
+//le livre recherché n'existe pas
+		echo "Book not found";
+	} else {
+
+//on trouve le livre recherché
+
+		//while ($data = mysqli_fetch_assoc($result)) {
+		$data2 = mysqli_fetch_assoc($result);
+
+				$name[$data['numphoto']] = $data2['nom_fichier'];
+
+				//$name[$data['numphoto']] = "SELECT nom_fichier FROM photo WHERE numphoto like '2'";
+			}
+		}
+
+			if($data['numphoto']==3)
+			{
+				$nouvname = "SELECT nom_fichier FROM photo";
+				$nouvname .= " WHERE numphoto like '3'";
+				$result2 = mysqli_query($db_handle, $sql);
+				if (mysqli_num_rows($result2) == 0) {
+
+//le livre recherché n'existe pas
+		echo "Book not found";
+	} else {
+
+//on trouve le livre recherché
+
+		//while ($data = mysqli_fetch_assoc($result)) {
+		$data2 = mysqli_fetch_assoc($result);
+
+				$name[$data['numphoto']] = $data2['nom_fichier'];
+
+				//$name[$data['numphoto']] = "SELECT nom_fichier FROM photo WHERE numphoto like '2'";
+			}
+			}
 		}
 
                     //echo "Nom: " . $data['nom'] . "<br>";
@@ -37,7 +108,7 @@ for (int i=1; i<4 ; i++) {
                     //echo "<br>";
                     //include("AccueilAdmin.html");
 
-		} 
+		//} 
 	}
 }
 
@@ -118,9 +189,9 @@ for (int i=1; i<4 ; i++) {
  <div class="row">
  <div class="col-lg-4 col-md-4 col-sm-12">
 
- <h3 class="feature-title"><?php echo $name[1]; ?></h3>
+ <h3 class="feature-title"><?php echo $name[2]; ?></h3>
 
- <img src="<?php echo $name[1]; ?>" class="img-fluid">
+ <img src="<?php echo $name[2]; ?>" class="img-fluid">
 
  </div>
 </div></div>
