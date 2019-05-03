@@ -84,9 +84,14 @@ $db_found = mysqli_select_db($db_handle, $database);
  <div class="row">
  <div class="col-lg-4 col-md-4 col-sm-12">
 
-<?php 
-	page_vetements($db_handle);
+<?php
+	if($db_found){
+		page_vetements($db_handle);
+	} else {
+		echo 'BD not found';
+	}
 ?>
+
 
 
  </div>
