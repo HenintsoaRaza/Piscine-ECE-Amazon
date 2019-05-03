@@ -5,9 +5,13 @@ function affiche_photo($nom_fichier){
 	echo '<img src="'.$nom_fichier.'" width=200px height=200px border="0" />';
 }
 
+function affiche_photo_grand($nom_fichier){
+	echo '<img src="'.$nom_fichier.'" width=400px height=400px border="0" />';
+}
+
  //Affiche toutes les photos d'un article
 function affiche_toutes_photos_id($id,$db_handle){
-	$sql = "SELECT nom_fichier FROM photo WHERE id LIKE $id";
+	$sql = "SELECT * FROM photo WHERE id LIKE $id";
 	$result = mysqli_query($db_handle,$sql);
 	$array = array();
 	while($data = mysqli_fetch_assoc($result)){
@@ -15,10 +19,84 @@ function affiche_toutes_photos_id($id,$db_handle){
 	}
 
 	for($i = 0; $i < sizeof($array); $i++){
-		affiche_photo($array[$i]);
+		if(sizeof($array)!==0){affiche_photo_grand("img/".$array[$i]);}
+		else echo "Aucune photo";
 	}
 }
 
+// Affiche les détails et les photos d'un article de type vêtement
+function detail_vetement($id,$db_handle){
+	affiche_toutes_photos_id($id,$db_handle);
+
+	$sql = "SELECT * FROM vetement WHERE id LIKE $id";
+	$result = mysqli_query($db_handle,$sql);
+	$data = mysqli_fetch_assoc($result);
+	echo '
+<table>
+<tr>
+	<td><b>Nom : </b></td>
+	<td>'.$data['nom'].' </td>
+</tr>
+<tr>
+	<td><b>Description : </b></td>
+	<td>'.$data['description'].' </td>
+</tr>
+<tr>
+	<td><b>Prix : </b></td>
+	<td>'.$data['prix'].' </td>
+</tr>
+<tr>
+	<td><b>Vendeur : </b></td>
+	<td>'.$data['vendeur'].' </td>
+</tr>
+<tr>
+	<td><b>Type : </b></td>
+	<td>'.$data['type'].' </td>
+</tr>
+<tr>
+	<td><b>Sexe : </b></td>
+	<td>'.$data['sexe'].' </td>
+</tr>
+<tr>
+	<td><b>Vendus : </b></td>
+	<td>'.$data['quantite_vendue'].' </td>
+</tr>
+</table><br><br><br><br>'
+;
+}
+
+// Affiche les détails et les photos d'un article de type livre, musique ou sport & loisir
+function detail_article($id,$categorie,$db_handle){
+	affiche_toutes_photos_id($id,$db_handle);
+
+	$sql = "SELECT * FROM $categorie WHERE id LIKE $id";
+	$result = mysqli_query($db_handle,$sql);
+	$data = mysqli_fetch_assoc($result);
+	echo '
+<table>
+<tr>
+	<td><b>Nom : </b></td>
+	<td>'.$data['nom'].' </td>
+</tr>
+<tr>
+	<td><b>Description : </b></td>
+	<td>'.$data['description'].' </td>
+</tr>
+<tr>
+	<td><b>Prix : </b></td>
+	<td>'.$data['prix'].' </td>
+</tr>
+<tr>
+	<td><b>Vendeur : </b></td>
+	<td>'.$data['vendeur'].' </td>
+</tr>
+<tr>
+	<td><b>Vendus : </b></td>
+	<td>'.$data['quantite_vendue'].' </td>
+</tr>
+</table><br><br><br><br>'
+;
+}
 
 //Affiche une image d'un article à l'aide d'un id
 function apercu_image($id,$db_handle){
@@ -65,7 +143,7 @@ function apercu_vetement_id($id,$db_handle){
 ;
 }
 
-
+// Affiche tous les articles de la catégorie vêtements
 function page_vetements($db_handle){
 	$sql = "SELECT id FROM vetement";
 	$result = mysqli_query($db_handle,$sql);
@@ -103,6 +181,7 @@ function apercu_article_id($id,$categorie,$db_handle){
 ;
 }
 
+// Affiche tous les articles des catégories livre, musique et sport et loisir en fonction de la page où on se trouve
 function page_articles($categorie,$db_handle){
 	if($categorie=='livre'){$sql = "SELECT id FROM livre";}
 	elseif ($categorie=='musique') {$sql = "SELECT id FROM musique";}
