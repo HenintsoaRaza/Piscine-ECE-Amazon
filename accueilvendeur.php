@@ -16,7 +16,7 @@
  $('.header').height($(window).height());
  });
 </script>
-<header class="page-header header container-fluid" style="background-image: url('<?php echo $_SESSION['Nomphoto']; ?>');" height="100%" width="100%">
+<header class="page-header header container-fluid" style="background-image: url('<?php echo $_SESSION['image']; ?>');" heigth="100%" width="100%">
 
 </head>
 <body>

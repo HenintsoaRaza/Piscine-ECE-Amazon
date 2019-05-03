@@ -28,12 +28,11 @@ session_start();
 
 </head>
 <body>
-	<form action="covendeur.php" method="post">
-
+<form action="covendeur.php" method="post">
 <nav class="navbar navbar-expand-md">
 	
  <a class="navbar-brand">
-  <img src="logooo.jpg" alt="logo">
+  <img src="newlogo.png" alt="logo">
 </a>
 
  <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
@@ -44,10 +43,10 @@ session_start();
  <div class="collapse navbar-collapse" id="main-navigation">
  <ul class="navbar-nav">
 
- 	 <li class="nav-item"><a class="nav-link" href="Page_accueil_amazon.html"> <i class="fa fa-home" aria-hidden="true"></i> Accueil</a></li>
+ 	 <li class="nav-item"><a class="nav-link" href="Page_accueil_amazon.php"> <i class="fa fa-home" aria-hidden="true"></i> Accueil</a></li>
 
  <li class="nav-item dropdown">
- 	<a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+ 	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
 
  	Categories 
  </a>
@@ -61,7 +60,7 @@ session_start();
 
  </li>
  <li class="nav-item"><a class="nav-link" href="ventes flash.html">Ventes Flash <i class="fa fa-bolt" aria-hidden="true"></i></a></li>
- <li class="nav-item"><a class="nav-link" style="color: red;">Vendre </a></li>
+ <li class="nav-item"><a class="nav-link" style="color: red;">Vendre</a></li>
  <li class="nav-item"><a class="nav-link" href="votre compte.html">Votre Compte</a></li>
  <li class="nav-item"><a class="nav-link" href="admin.html">Admin <i class="fa fa-lock" aria-hidden="true"></i></a></li>
  <li  <a class="btn btn-warning" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Panier</a> </li>
@@ -76,7 +75,7 @@ session_start();
 <div class="container features-compte">
  <div class="row">
 <div class="col-lg-5 col-md-5 col-sm-12">
-
+<div class="rectangle container-fluid">
  	<h3 class="feature-title-votre-compte">Connectez-vous pour vendre vos produits</h3> <br>
 <div class="form-group">
  <input type="email" class="form-control" placeholder="Email:" name="email">
@@ -86,6 +85,7 @@ session_start();
 </div>
 <input type="submit" class="btn btn-secondary btn-block" value="Se connecter" name="Connec">
  </div>
+</div>
 </div>
 </div>
 </header>
