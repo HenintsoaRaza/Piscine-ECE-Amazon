@@ -1,6 +1,6 @@
 <?php
 
-$database = "admin";
+$database = "admin3";
 
 $pseudo = isset($_POST["pseudo"])? $_POST["pseudo"] : "";
 
@@ -15,7 +15,7 @@ if (!empty($_POST)) {
     //echo '<p>Le bouton enfoncé est le bouton ';
     if (isset($_POST['Connec'])) {
         if ($db_found) {
-            $sql = "SELECT * FROM vendeurs";
+            $sql = "SELECT * FROM vendeur";
             if ($pseudo != "") {
 //on cherche le livre avec les paramètres titre et auteur
                 $sql .= " WHERE Pseudo LIKE '%$pseudo%'";
@@ -39,7 +39,7 @@ if (!empty($_POST)) {
 
                     $_SESSION['email'] = $data['email'];
                     $_SESSION['pseudo'] = $data['pseudo'];
-                    $_SESSION['Nomphoto'] = $data['Nomphoto'];
+                    $_SESSION['image'] = $data['image'];
 
                     include("accueilvendeur.php");
 

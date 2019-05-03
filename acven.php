@@ -1,6 +1,6 @@
 <?php
 
-$database = "admin";
+$database = "admin3";
 
 session_start();
 
