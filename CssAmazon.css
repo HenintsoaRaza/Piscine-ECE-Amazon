@@ -1,7 +1,11 @@
 body {
  padding: 0px;
  margin: 0px;
- background: #f2f6e9;
+ background-size: cover;
+ background-position: center;
+ position: relative;
+
+
 }
 
 /*--- navigation bar ---*/
@@ -9,9 +13,6 @@ body {
  background: black;
 
 }
-
-
-
 .rectangle{
 
 margin-top: 100px;
@@ -57,9 +58,11 @@ color: red;
 
 }
 
+
+
 .header {
 
- background-image: url('page-blanche.jpg');
+
  background-size: cover;
  background-position: center;
  position: relative;
@@ -73,7 +76,7 @@ color: red;
  min-width: 100%;
  left: 0px;
  top: 0px;
- background-color: rgba(0, 0, 0, 0.35);
+ 
 }
 
 .description {
@@ -119,6 +122,31 @@ position: center;
 
 }
 
+.image-cate
+{
+	
+	height: 600px;
+	width: 600px;
+	margin-top: 150px;
+	margin-left: 200px;
+	
+
+	
+}
+
+.ecriture
+{
+	margin-left: 300px;
+	
+
+}
+.image-detail
+{
+	height: 350px;
+	width: 350px;
+	margin-top: 150px;
+	margin-left: 350px;
+}
 .carousel-item
 {
 	margin-top: 150px;
@@ -137,6 +165,11 @@ position: center;
 	height: 280px;
 	width: 250px;
 }
+.image-profile
+{
+	width: 50%;
+	height: 50%;
+}
 
 .btn
 {
@@ -145,7 +178,7 @@ position: center;
 }
 
 .feature-title-votre-compte {
- color: white;
+ color: black;
  font-size: 1.3rem;
  font-weight: 700;
 padding-top: 25px;
@@ -157,14 +190,8 @@ text-align: center;
  -moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
  margin-bottom: 16px;
+
 }
-
-
-
-
-
-
-
 
 
 

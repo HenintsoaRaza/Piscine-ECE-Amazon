@@ -1,9 +1,7 @@
 <?php
-
 session_start();
 
 ?>
-
 
 <!DOCTYPE html>
 <html>
@@ -32,7 +30,7 @@ session_start();
 <nav class="navbar navbar-expand-md">
 	
  <a class="navbar-brand">
-  <img src="newlogo.png" alt="logo">
+  <img src="img/newlogo.png" alt="logo">
 </a>
 
  <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
@@ -43,7 +41,7 @@ session_start();
  <div class="collapse navbar-collapse" id="main-navigation">
  <ul class="navbar-nav">
 
- 	 <li class="nav-item"><a class="nav-link" href="Page_accueil_amazon.php"> <i class="fa fa-home" aria-hidden="true"></i> Accueil</a></li>
+ 	 <li class="nav-item"><a class="nav-link" href="Page_accueil_amazon.html"> <i class="fa fa-home" aria-hidden="true"></i> Accueil</a></li>
 
  <li class="nav-item dropdown">
  	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
@@ -52,10 +50,10 @@ session_start();
  </a>
 
 	<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-    <a class="dropdown-item" href="CategorieSport.html">Sport & Loisirs <i class="fa fa-bicycle" aria-hidden="true"></i></a>
-    <a class="dropdown-item" href="CategorieVetements.html">Vetement <i class="fa fa-shopping-bag" aria-hidden="true"></i></a>
-     <a class="dropdown-item" href="CategorieMusique.html">Musique <i class="fa fa-music" aria-hidden="true"></i></a>
-      <a class="dropdown-item" href="CategorieLivres.html">Livres <i class="fa fa-book" aria-hidden="true"></i></a>
+    <a class="dropdown-item" href="CategorieSport.php">Sport & Loisirs <i class="fa fa-bicycle" aria-hidden="true"></i></a>
+    <a class="dropdown-item" href="CategorieVetements.php">Vetement <i class="fa fa-shopping-bag" aria-hidden="true"></i></a>
+     <a class="dropdown-item" href="CategorieMusique.php">Musique <i class="fa fa-music" aria-hidden="true"></i></a>
+      <a class="dropdown-item" href="CategorieLivres.php">Livres <i class="fa fa-book" aria-hidden="true"></i></a>
 </div>
 
  </li>
@@ -63,7 +61,7 @@ session_start();
  <li class="nav-item"><a class="nav-link" style="color: red;">Vendre</a></li>
  <li class="nav-item"><a class="nav-link" href="votre compte.html">Votre Compte</a></li>
  <li class="nav-item"><a class="nav-link" href="admin.html">Admin <i class="fa fa-lock" aria-hidden="true"></i></a></li>
- <li  <a class="btn btn-warning" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Panier</a> </li>
+  <a class="btn btn-warning" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Panier</a> 
  </ul>
  </div>
 
@@ -81,7 +79,7 @@ session_start();
  <input type="email" class="form-control" placeholder="Email:" name="email">
 </div>
 <div class="form-group">
- <input type="text" class="form-control" placeholder="Votre pseudo:" name="pseudo">
+ <input type="password" class="form-control" placeholder="Votre pseudo:" name="pseudo">
 </div>
 <input type="submit" class="btn btn-secondary btn-block" value="Se connecter" name="Connec">
  </div>
