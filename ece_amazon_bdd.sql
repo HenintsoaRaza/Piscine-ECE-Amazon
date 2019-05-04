@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Ven 03 Mai 2019 à 23:26
+-- Généré le :  Sam 04 Mai 2019 à 21:28
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -146,8 +146,18 @@ CREATE TABLE IF NOT EXISTS `panier` (
   `num_client` mediumint(6) unsigned zerofill NOT NULL,
   `categorie` enum('livre','musique','sport et loisir','vetement') NOT NULL,
   `quantite` smallint(5) unsigned NOT NULL,
-  PRIMARY KEY (`id`,`num_client`)
+  `prix` float(7,2) unsigned NOT NULL,
+  KEY `cle` (`id`,`num_client`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `panier`
+--
+
+INSERT INTO `panier` (`id`, `num_client`, `categorie`, `quantite`, `prix`) VALUES
+(100000, 000001, 'musique', 19, 12.99),
+(300000, 000001, 'sport et loisir', 4, 139.99),
+(200002, 000001, 'vetement', 7, 53.19);
 
 -- --------------------------------------------------------
 
