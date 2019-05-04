@@ -2,19 +2,13 @@
 
 
 function affiche_photo($nom_fichier,$db_handle){
-	$sql = "SELECT * FROM photo WHERE nom_fichier LIKE $nom_fichier";
+	$sql = "SELECT id FROM photo WHERE nom_fichier = '$nom_fichier' " ;
 	$result = mysqli_query($db_handle,$sql);
-	$array = array();
-	while($data = mysqli_fetch_assoc($result)){
-		array_push($array, $data['id']);
-	}
-	if(sizeof($array)==0){ echo 'PB de DB';}
-	else {
-		echo '<a href="detail.php?id='.$array[0].'">
-		<img src="'.$nom_fichier.'" width=200px height=200px border="0" />
-		</a>';
-	}
-
+	$data = mysqli_fetch_assoc($result);
+	
+	echo '<a href="detail.php?id='.$data['id'].'" > <img src="'.$nom_fichier.'" width=200px height=200px border="0" />
+	</a>
+	';
 }
 
 function affiche_photo_grand($nom_fichier){
