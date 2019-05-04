@@ -2,7 +2,7 @@
 
 include("fonctions2.php");
 
-$database = "admin";
+$database = "ece_amazon_bdd";
 
 $db_handle = mysqli_connect('localhost', 'root', '');
 $db_found = mysqli_select_db($db_handle, $database);
@@ -80,8 +80,13 @@ $db_found = mysqli_select_db($db_handle, $database);
 
  <div class="col-md-5">
  
- <?php 
- 		detail_vetement('200001',$db_handle)
+ <?php
+ 		$id = $_GET['id'];
+ 		$categorie = floor($id/100000);
+ 		if($categorie==1){detail_article($id,'musique',$db_handle);}
+ 			elseif ($categorie==2) {detail_vetement($id,$db_handle);}
+ 			elseif ($categorie==3) {detail_article($id,'sport_loisir',$db_handle);}
+ 			elseif ($categorie==4) {detail_article($id,'livre',$db_handle);}
  ?>
 
 
