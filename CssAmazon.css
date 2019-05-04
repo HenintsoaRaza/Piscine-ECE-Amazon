@@ -133,13 +133,24 @@ position: center;
 
 	
 }
+.center
+{
+	margin-left: 150px;
+}
 
 .ecriture
 {
-	margin-left: 300px;
+	margin-left: 350px;
 	
 
 }
+
+.ecriture-detail
+{
+	margin-left: 80px;
+}
+
+
 .image-detail
 {
 	height: 350px;

@@ -1,9 +1,17 @@
 <?php
 
 
-function affiche_photo($nom_fichier){
+function affiche_photo($nom_fichier,$db_handle){
 
-	echo '<a class="nav-link" href="detail.php"><img src="'.$nom_fichier.'" class="image-cate" /></a>';
+	$chaine = substr($nom_fichier, 4);
+
+	$sql = "SELECT id FROM photo WHERE nom_fichier LIKE '$chaine' " ;
+
+	$result = mysqli_query($db_handle,$sql);
+
+	$data = mysqli_fetch_assoc($result);
+
+	echo '<a href="detail.php?id='.$data['id'].'"> <img src="'.$nom_fichier.'" class="image-cate" /></a>';
 
 }
 
@@ -18,7 +26,7 @@ function affiche_photo_grand($nom_fichier){
 
 function affiche_toutes_photos_id($id,$db_handle){
 
-	$sql = "SELECT nom_fichier FROM photo WHERE id LIKE $id";
+	$sql = "SELECT * FROM photo WHERE id LIKE $id";
 
 	$result = mysqli_query($db_handle,$sql);
 
@@ -34,7 +42,9 @@ function affiche_toutes_photos_id($id,$db_handle){
 
 	for($i = 0; $i < sizeof($array); $i++){
 
-		affiche_photo("img/".$array[$i]);
+		if(sizeof($array)!==0){affiche_photo_grand("img/".$array[$i]);}
+
+		else echo "Aucune photo";
 
 	}
 
@@ -53,7 +63,7 @@ function detail_vetement($id,$db_handle){
 	$data = mysqli_fetch_assoc($result);
 
 	echo '
-
+<div class="ecriture-detail">
 <table>
 
 <tr>
@@ -112,8 +122,17 @@ function detail_vetement($id,$db_handle){
 
 </tr>
 
-</table><br><br><br><br>'
+<tr>
+<td>
+<br>
+ <a class="btn btn-warning" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Ajouter au Panier</a> 
+ <br>
+ </td>
 
+ </tr>
+
+</table><br><br><br><br>
+</div>'
 ;
 
 }
@@ -133,7 +152,7 @@ function detail_article($id,$categorie,$db_handle){
 	$data = mysqli_fetch_assoc($result);
 
 	echo '
-
+<div class="ecriture-detail">
 <table>
 
 <tr>
@@ -176,8 +195,16 @@ function detail_article($id,$categorie,$db_handle){
 
 </tr>
 
-</table><br><br><br><br>'
+<tr>
+<td>
+<br>
+ <a class="btn btn-warning" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Ajouter au Panier</a> 
+ <br>
+ </td>
 
+ </tr>
+</table><br><br><br><br>
+</div>'
 ;
 
 }
@@ -199,7 +226,7 @@ function apercu_image($id,$db_handle){
 
 	}
 
-	if(sizeof($array)!==0){affiche_photo("img/".$array[0]);}
+	if(sizeof($array)!==0){affiche_photo("img/".$array[0],$db_handle);}
 
 	else echo "Aucune photo";
 
