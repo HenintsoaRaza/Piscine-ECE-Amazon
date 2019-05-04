@@ -1,8 +1,13 @@
 <?php
 
 
-function affiche_photo($nom_fichier){
-	echo '<img src="'.$nom_fichier.'" width=200px height=200px border="0" />';
+function affiche_photo($nom_fichier,$db_handle){
+	$chaine = substr($nom_fichier, 4);
+	$sql = "SELECT id FROM photo WHERE nom_fichier LIKE '$chaine' " ;
+	$result = mysqli_query($db_handle,$sql);
+	$data = mysqli_fetch_assoc($result);
+	
+	echo '<a href="detail.php?id='.$data['id'].'"> <img src="'.$nom_fichier.'" width=200px height=200px border="0" /></a>';
 }
 
 function affiche_photo_grand($nom_fichier){
@@ -106,7 +111,7 @@ function apercu_image($id,$db_handle){
 	while($data = mysqli_fetch_assoc($result)){
 		array_push($array, $data['nom_fichier']);
 	}
-	if(sizeof($array)!==0){affiche_photo("img/".$array[0]);}
+	if(sizeof($array)!==0){affiche_photo("img/".$array[0],$db_handle);}
 	else echo "Aucune photo";
 	
 }
