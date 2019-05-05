@@ -15,7 +15,6 @@ function affiche_photo($nom_fichier,$db_handle){
 
 }
 
-
 function affiche_photo_grand($nom_fichier){
 
 	echo '<img src="'.$nom_fichier.'" width=400px height=400px border="0" />';
@@ -330,7 +329,7 @@ function apercu_article_id($id,$categorie,$db_handle){
 
 </tr>
 
-</table><br><br><br><br>
+</table>
 </div>'
 
 ;
@@ -370,4 +369,5 @@ function page_articles($categorie,$db_handle){
 	}
 
 }
+
 ?>
