@@ -18,13 +18,8 @@ $quantite_vendue = isset($_POST["quantite_vendue"])? $_POST["quantite_vendue"] :
 $description = isset($_POST["description"])? $_POST["description"] : "";
 $type = isset($_POST["type"])? $_POST["type"] : "";
 $sexe = isset($_POST["sexe"])? $_POST["sexe"] : "";
-$id2 = isset($_POST["id2"])? $_POST["id2"] : "";
-$nomlivre2 = isset($_POST["nomlivre2"])? $_POST["nomlivre2"] : "";
-$name = $_SESSION['pseudo'];
-$categorie2 = isset($_POST["categorie2"])? $_POST["categorie2"] : "";
-$prix2 = isset($_POST["prix2"])? $_POST["prix2"] : "";
-$quantite_vendue2 = isset($_POST["quantite_vendue2"])? $_POST["quantite_vendue2"] : "";
-$description2 = isset($_POST["description2"])? $_POST["description2"] : "";
+
+
 
 
 $db_handle = mysqli_connect('localhost', 'root', '');
@@ -350,89 +345,119 @@ if (!empty($_POST)) {
 
     } 
 
-    elseif (isset($_POST['Add2'])) {
+
+    elseif (isset($_POST['Delete'])) {
 
         if ($db_found) {
-        $sql = "SELECT * FROM vetement";
-        if ($id2 != "") {
+
+            if ($categorie == "musique"){
+
+
+                $sql = "SELECT * FROM musique";
+                if ($id != "") {
 //on cherche le livre avec les paramètres titre et auteur
-            $sql .= " WHERE id LIKE '%$id2%'";
-            if ($nomlivre2 != "") {
-                $sql .= " AND nom LIKE '%$nomlivre2%'";
-                if ($description2 != "") {
-                    $sql .= " AND description LIKE '%$description2%'";
-                    if ($prix2 != "") {
-                        $sql .= " AND prix LIKE '%$prix2%'";
-                        if ($quantite_vendue2 != "") {
-                            $sql .= " AND quantite_vendue LIKE '%$quantite_vendue2%'";
-                            if ($type != "") {
-                                $sql .= " AND type LIKE '%$type%'";
-                                if ($sexe != "") {
-                                    $sql .= " AND sexe LIKE '%$sexe%'";
-                                }
-                            }
+                    $sql .= " WHERE id LIKE '%$id%'";
+                    if ($nomlivre != "") {
+                        $sql .= " AND nom LIKE '%$nomlivre%'";
+
+                        if ($prix != "") {
+                            $sql .= " AND prix LIKE '%$prix%'";
                         }
                     }
                 }
-            }
-
-
-
-        }
-        $result = mysqli_query($db_handle, $sql);
+                $result = mysqli_query($db_handle, $sql);
 //regarder s'il y a de résultat
-        if (mysqli_num_rows($result) != 0) {
-//le livre est déjà dans la BDD
-            echo "Vendeur already exists.
-            Duplicate of vendeurs are not allowed.";
+                if (mysqli_num_rows($result) == 0) {
+//le livre recherché n'existe pas
+                    echo "Le vendeur n'existe pas.";
+                } else {
+//on trouve le livre recherché
+                    $sql = "DELETE FROM musique WHERE id = '$id' ";
 
-        } else {
-            $sql = "INSERT INTO vetement(id, nom, vendeur, description, prix, quantite_vendue, type, sexe)
-            VALUES('$id2', '$nomlivre2', '$name', '$description2', '$prix2', '$quantite_vendue2', '$type', '$sexe')";
-            $result = mysqli_query($db_handle, $sql);
-            echo "Add successful." . "<br>";
-            $sql = "SELECT * FROM vetement";
- //on affiche le livre ajouté
-            if ($id2 != "") {
+                    $result = mysqli_query($db_handle, $sql);
+                    echo "Vendeur supprimé." . "<br>";
+                    echo "<br>";
+                }
+            }
+
+            elseif ($categorie == "sport_loisir"){
+
+
+                $sql = "SELECT * FROM sport_loisir";
+                if ($id != "") {
 //on cherche le livre avec les paramètres titre et auteur
-                $sql .= " WHERE id LIKE '%$id2%'";
-                if ($nomlivre2 != "") {
-                    $sql .= " AND nom LIKE '%$nomlivre2%'";
-                    if ($description2 != "") {
-                        $sql .= " AND description LIKE '%$description2%'";
-                        if ($prix2 != "") {
-                            $sql .= " AND prix LIKE '%$prix2%'";
-                            if ($quantite_vendue2 != "") {
-                                $sql .= " AND quantite_vendue LIKE '%$quantite_vendue2%'";
-                                if ($type != "") {
-                                    $sql .= " AND type LIKE '%$type%'";
-                                    if ($sexe != "") {
-                                        $sql .= " AND sexe LIKE '%$sexe%'";
-                                    }
-                                }
-                            }
+                    $sql .= " WHERE id LIKE '%$id%'";
+                    if ($nomlivre != "") {
+                        $sql .= " AND nom LIKE '%$nomlivre%'";
+
+                        if ($prix != "") {
+                            $sql .= " AND prix LIKE '%$prix%'";
                         }
                     }
                 }
+                $result = mysqli_query($db_handle, $sql);
+//regarder s'il y a de résultat
+                if (mysqli_num_rows($result) == 0) {
+//le livre recherché n'existe pas
+                    echo "Le vendeur n'existe pas.";
+                } else {
+//on trouve le livre recherché
+                    $sql = "DELETE FROM sport_loisir WHERE id = '$id' ";
 
-
-
+                    $result = mysqli_query($db_handle, $sql);
+                    echo "Vendeur supprimé." . "<br>";
+                    echo "<br>";
+                }
             }
-            $result = mysqli_query($db_handle, $sql);
-            while ($data = mysqli_fetch_assoc($result)) {
-                echo "Informations sur le vendeur ajouté:" . "<br>";
-                echo "Id: " . $data['id'] . "<br>";
-                echo "Nom: " . $data['nom'] . "<br>";
-                echo "Vendeur: " . $data['vendeur'] . "<br>";
 
-                echo "<br>";
+            elseif ($categorie == "livre"){
+
+
+                $sql = "SELECT * FROM livre";
+                if ($id != "") {
+//on cherche le livre avec les paramètres titre et auteur
+                    $sql .= " WHERE id LIKE '%$id%'";
+                    if ($nomlivre != "") {
+                        $sql .= " AND nom LIKE '%$nomlivre%'";
+
+                        if ($prix != "") {
+                            $sql .= " AND prix LIKE '%$prix%'";
+                        }
+                    }
+                }
+                $result = mysqli_query($db_handle, $sql);
+//regarder s'il y a de résultat
+                if (mysqli_num_rows($result) == 0) {
+//le livre recherché n'existe pas
+                    echo "Le vendeur n'existe pas.";
+                } else {
+//on trouve le livre recherché
+                    $sql = "DELETE FROM livre WHERE id = '$id' ";
+
+                    $result = mysqli_query($db_handle, $sql);
+                    echo "Vendeur supprimé." . "<br>";
+                    echo "<br>";
+                }
             }
+
         }
-    }
+
+    } else {
+        echo "Database not found";
     }
 
+} 
 
-}
+
+
+
+
+
+
+
+
+
+
 
 
 

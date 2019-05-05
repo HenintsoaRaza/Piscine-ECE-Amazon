@@ -107,6 +107,7 @@
  <option value="musique">Musiques</option>
  <option value="livre">Livres</option>
  <option value="sport_loisir">Sports et Loisirs</option>
+ <option value="vetement">Vetements</option>
  
 </select>
 
@@ -125,45 +126,11 @@
 <input type="submit" class="btn btn-secondary btn-block" value="Supprimer" name="Delete">
 
 
-<h4 class="feature-title-votre-compte">Ajouter ou supprimer :</h4> <br>
-
-<div class="form-group">
-<input  type="text" class="form-control" placeholder= "id" name="id2">
-</div>
-<div class="form-group">
- <input type="text" class="form-control" placeholder="nom" name="nomlivre2">
-</div>
-<div class="form-group">
-<input  type="text" class="form-control" placeholder= "description:" name="description2">
-</div>
-<div class="form-group">
-<input  type="text" class="form-control" placeholder= "prix:" name="prix2">
-</div>
-<div class="form-group">
-<input  type="text" class="form-control" placeholder= "quantite_vendue:" name="quantite_vendue2">
-</div>
-
-<div class="form-group">
-
-<select class=form-control name="categorie">
- <option value="vetement">Vetements</option>
- 
- 
-</select>
-
-</div>
-
-<div class="form-group">
-<input  type="text" class="form-control" placeholder= "type:" name="type">
-</div>
 
 
-<div class="form-group">
-<input  type="text" class="form-control" placeholder= "sexe:" name="sexe">
-</div>
 
-<input type="submit" class="btn btn-secondary btn-block" value="Ajouter" name="Add2"> 
-<input type="submit" class="btn btn-secondary btn-block" value="Supprimer" name="Delete2">
+
+
 
 
 </div>
