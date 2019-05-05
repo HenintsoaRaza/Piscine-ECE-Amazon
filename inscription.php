@@ -2,7 +2,7 @@
 
 include("fonctions2.php");
 
-$database = "admin3";
+$database = "admin";
 
 $db_handle = mysqli_connect('localhost', 'root', '');
 $db_found = mysqli_select_db($db_handle, $database);
@@ -111,50 +111,50 @@ if(isset($_SESSION['email'])!=""){
 
 <div class="form-group">
 
-<input  type="text" class="form-control" placeholder= "nom" name="nom">
+<input required type="text" class="form-control" placeholder= "nom" name="nom">
 
 </div>
 
 <div class="form-group">
 
- <input type="text" class="form-control" placeholder="prenom" name="prenom">
+ <input required type="text" class="form-control" placeholder="prenom" name="prenom">
 
 </div>
 
 <div class="form-group">
 
-<input  type="text" class="form-control" placeholder= "email" name="email">
+<input required type="email" class="form-control" placeholder= "email" name="email">
 
 </div>
 
 <div class="form-group">
 
-<input  type="password" class="form-control" placeholder= "mot de passe" name="mdp">
+<input required type="password" class="form-control" placeholder= "mot de passe" name="mdp">
 
 </div>
 
 <div class="form-group">
 
-<input  type="adress" class="form-control" placeholder= "Adresse" name="adresse">
+<input required type="adress" class="form-control" placeholder= "Adresse" name="adresse">
 
 </div>
 
 <div class="form-group">
 
-<input  type="text" class="form-control" placeholder= "Ville" name="ville">
+<input required type="text" class="form-control" placeholder= "Ville" name="ville">
 </div>
 <div class="form-group">
 
-<input  type="text" class="form-control" placeholder= "Code Postal" name="code_postal">
+<input required type="number" class="form-control" placeholder= "Code Postal" name="code_postal" size="5">
 </div>
 
 <div class="form-group">
 
-<input  type="text" class="form-control" placeholder= "Pays" name="pays">
+<input required type="text" class="form-control" placeholder= "Pays" name="pays">
 </div>
 <div class="form-group">
 
-<input  type="text" class="form-control" placeholder= "Telephone" name="telephone">
+<input required type="number" class="form-control" placeholder= "Telephone" name="telephone" maxlenght="10">
 </div>
 
 <input type="submit" class="btn btn-secondary btn-block" value="S'inscrire" name="Add"> 
