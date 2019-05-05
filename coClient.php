@@ -35,6 +35,8 @@ if (!empty($_POST)) {
             	$sql = "SELECT * FROM client WHERE email LIKE '%$email%'";
             	$result = mysqli_query($db_handle, $sql);
             	while ($data = mysqli_fetch_assoc($result)){
+            		$_SESSION['email']= $data['email'];
+            		$_SESSION['mdp']= $data['mdp'];
             		$_SESSION['num_client'] = $data['num_client'];
             		//echo $data['num_client'];
             	}
