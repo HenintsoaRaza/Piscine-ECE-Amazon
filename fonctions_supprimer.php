@@ -201,18 +201,20 @@ function page_articles_supprimer($categorie,$db_handle){
 
 
 	for($i=0; $i<sizeof($array); $i++){
+		$id_supp = $array[$i];
+		apercu_article_id_supprimer($id_supp,$categorie,$db_handle);
 
-		apercu_article_id_supprimer($array[$i],$categorie,$db_handle);
-		echo'<div class= "booto">
-		 <a class="btn btn-danger" href="#"><i class="fas fa-times-circle"></i> Supprimer</a> 
-		 </div>'
-		 ;
+		echo '
+		<div class= "booto">
+		<form action="supprimer_article_admin.php" method="POST">
+			<input type="hidden" value='.$id_supp.' name=id>
+		  <input class="btn btn-danger" type="submit" value="Supprimer">
+		  </form>
+		 </div>
+		';
 
 	}
-
 }
-
-
 
 
 function page_vetements_supprimer($db_handle){
@@ -232,14 +234,22 @@ function page_vetements_supprimer($db_handle){
 
 
 	for($i=0; $i<sizeof($array); $i++){
-
+		$id_supp = $array[$i];
 		apercu_vetement_id_supprimer($array[$i],$db_handle);
-		echo'<div class= "booto">
-		 <a class="btn btn-danger" href="#"><i class="fas fa-times-circle"></i> Supprimer</a> 
-		 </div>'
-		 ;
+
+		echo '
+		<div class= "booto">
+		<form action="supprimer_article_admin.php" method="POST">
+			<input type="hidden" value='.$id_supp.' name=id>
+		  <input class="btn btn-danger" type="submit" value="Supprimer">
+		  </form>
+		 </div>
+		';
 
 	}
 
 }
+
+
+
 ?>
