@@ -35,9 +35,17 @@ if (!empty($_POST)) {
             	$sql = "SELECT * FROM client WHERE email LIKE '%$email%'";
             	$result = mysqli_query($db_handle, $sql);
             	while ($data = mysqli_fetch_assoc($result)){
+            		$_SESSION['num_client'] = $data['num_client'];
+            		$_SESSION['nom'] = $data['nom'];
             		$_SESSION['email']= $data['email'];
             		$_SESSION['mdp']= $data['mdp'];
-            		$_SESSION['num_client'] = $data['num_client'];
+            		$_SESSION['prenom'] = $data['prenom'];
+            		$_SESSION['adresse'] = $data['adresse'];
+            		$_SESSION['ville'] = $data['ville'];
+            		$_SESSION['code_postal'] = $data['code_postal'];
+            		$_SESSION['telephone'] = $data['telephone'];
+
+            		
             		//echo $data['num_client'];
             	}
                 header('location: panier.php');
