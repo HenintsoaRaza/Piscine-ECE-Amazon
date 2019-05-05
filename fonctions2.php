@@ -124,7 +124,7 @@ function detail_vetement($id,$db_handle){
 <tr>
 <td>
 <br>
- <a class="btn btn-warning" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Ajouter au Panier</a> 
+ <a class="btn btn-warning" href="ajouter_au_panier.php&id=$id"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Ajouter au Panier</a> 
  <br>
  </td>
 
@@ -197,7 +197,11 @@ function detail_article($id,$categorie,$db_handle){
 <tr>
 <td>
 <br>
- <a class="btn btn-warning" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Ajouter au Panier</a> 
+<form action="ajouter_au_panier.php" method="POST">
+	<input type="hidden" value='.$id.' name=id>
+  <input class="btn btn-warning" type="submit" value="Ajouter au Panier">
+
+  </form>
  <br>
  </td>
 
