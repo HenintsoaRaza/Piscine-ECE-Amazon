@@ -139,14 +139,14 @@ if (!empty($_POST)) {
 //regarder s'il y a de résultat
                 if (mysqli_num_rows($result) != 0) {
 //le livre est déjà dans la BDD
-                    echo "Vendeur already exists.
-                    Duplicate of vendeurs are not allowed.";
+                    include("accueilvendeur.php");
+                    echo "<script>alert(\"Ce produit existe deja.\")</script>";
 
                 } else {
                     $sql = "INSERT INTO musique(id, nom, vendeur, description, prix, quantite_vendue)
                     VALUES('$id', '$nomlivre', '$name', '$description', '$prix', '$quantite_vendue')";
                     $result = mysqli_query($db_handle, $sql);
-                    echo "Add successful." . "<br>";
+                    //echo "Add successful." . "<br>";
  //on affiche le livre ajouté
                     $sql = "SELECT * FROM musique";
                     if ($id != "") {
@@ -170,12 +170,8 @@ if (!empty($_POST)) {
                     }
                     $result = mysqli_query($db_handle, $sql);
                     while ($data = mysqli_fetch_assoc($result)) {
-                        echo "Informations sur le vendeur ajouté:" . "<br>";
-                        echo "Id: " . $data['id'] . "<br>";
-                        echo "Nom: " . $data['nom'] . "<br>";
-                        echo "Vendeur: " . $data['vendeur'] . "<br>";
-
-                        echo "<br>";
+                       echo "<script>alert(\"Musique ajoutée.\")</script>";
+                       include("accueilvendeur.php");
                     }
                 }
 
@@ -207,8 +203,8 @@ if (!empty($_POST)) {
 //regarder s'il y a de résultat
                 if (mysqli_num_rows($result) != 0) {
 //le livre est déjà dans la BDD
-                    echo "Vendeur already exists.
-                    Duplicate of vendeurs are not allowed.";
+                    include("accueilvendeur.php");
+                    echo "<script>alert(\"Ce produit existe deja.\")</script>";
 
                 } else {
                     $sql = "INSERT INTO livre(id, nom, vendeur, description, prix, quantite_vendue)
@@ -238,12 +234,8 @@ if (!empty($_POST)) {
                     }
                     $result = mysqli_query($db_handle, $sql);
                     while ($data = mysqli_fetch_assoc($result)) {
-                        echo "Informations sur le vendeur ajouté:" . "<br>";
-                        echo "Id: " . $data['id'] . "<br>";
-                        echo "Nom: " . $data['nom'] . "<br>";
-                        echo "Vendeur: " . $data['vendeur'] . "<br>";
-
-                        echo "<br>";
+                        include("accueilvendeur.php");
+                    echo "<script>alert(\"Produit ajouté.\")</script>";
                     }
                 }
 
@@ -275,14 +267,14 @@ if (!empty($_POST)) {
 //regarder s'il y a de résultat
                 if (mysqli_num_rows($result) != 0) {
 //le livre est déjà dans la BDD
-                    echo "Vendeur already exists.
-                    Duplicate of vendeurs are not allowed.";
+                    include("accueilvendeur.php");
+                    echo "<script>alert(\"Ce produit existe deja.\")</script>";
 
                 } else {
                     $sql = "INSERT INTO sport_loisir(id, nom, vendeur, description, prix, quantite_vendue)
                     VALUES('$id', '$nomlivre', '$name', '$description', '$prix', '$quantite_vendue')";
                     $result = mysqli_query($db_handle, $sql);
-                    echo "Add successful." . "<br>";
+                    //echo "Add successful." . "<br>";
  //on affiche le livre ajouté
                     $sql = "SELECT * FROM sport_loisir";
                     if ($id != "") {
@@ -306,12 +298,10 @@ if (!empty($_POST)) {
                     }
                     $result = mysqli_query($db_handle, $sql);
                     while ($data = mysqli_fetch_assoc($result)) {
-                        echo "Informations sur le vendeur ajouté:" . "<br>";
-                        echo "Id: " . $data['id'] . "<br>";
-                        echo "Nom: " . $data['nom'] . "<br>";
-                        echo "Vendeur: " . $data['vendeur'] . "<br>";
+                        include("accueilvendeur.php");
+                    echo "<script>alert(\"Produit ajouté.\")</script>";
 
-                        echo "<br>";
+                        
                     }
                 }
 
@@ -369,14 +359,18 @@ if (!empty($_POST)) {
 //regarder s'il y a de résultat
                 if (mysqli_num_rows($result) == 0) {
 //le livre recherché n'existe pas
-                    echo "Le vendeur n'existe pas.";
+                    include("accueilvendeur.php");
+                    echo "<script>alert(\"Ce produit n'existe pas.\")</script>";
                 } else {
 //on trouve le livre recherché
                     $sql = "DELETE FROM musique WHERE id = '$id' ";
 
                     $result = mysqli_query($db_handle, $sql);
-                    echo "Vendeur supprimé." . "<br>";
-                    echo "<br>";
+                    include("accueilvendeur.php");
+                    echo "<script>alert(\"Musique supprimée.\")</script>";
+                    
+                   // echo "Vendeur supprimé." . "<br>";
+                    //echo "<br>";
                 }
             }
 
@@ -399,14 +393,16 @@ if (!empty($_POST)) {
 //regarder s'il y a de résultat
                 if (mysqli_num_rows($result) == 0) {
 //le livre recherché n'existe pas
-                    echo "Le vendeur n'existe pas.";
+                    include("accueilvendeur.php");
+                    echo "<script>alert(\"Ce produit n'existe pas.\")</script>";
                 } else {
 //on trouve le livre recherché
                     $sql = "DELETE FROM sport_loisir WHERE id = '$id' ";
 
                     $result = mysqli_query($db_handle, $sql);
-                    echo "Vendeur supprimé." . "<br>";
-                    echo "<br>";
+                    include("accueilvendeur.php");
+                    echo "<script>alert(\"Produit supprimée.\")</script>";
+                    
                 }
             }
 
@@ -429,14 +425,15 @@ if (!empty($_POST)) {
 //regarder s'il y a de résultat
                 if (mysqli_num_rows($result) == 0) {
 //le livre recherché n'existe pas
-                    echo "Le vendeur n'existe pas.";
+                    include("accueilvendeur.php");
+                    echo "<script>alert(\"Ce produit n'existe pas.\")</script>";
                 } else {
 //on trouve le livre recherché
                     $sql = "DELETE FROM livre WHERE id = '$id' ";
 
                     $result = mysqli_query($db_handle, $sql);
-                    echo "Vendeur supprimé." . "<br>";
-                    echo "<br>";
+                    include("accueilvendeur.php");
+                    echo "<script>alert(\"Produit supprimée.\")</script>";
                 }
             }
 
