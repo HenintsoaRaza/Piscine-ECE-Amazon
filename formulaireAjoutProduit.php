@@ -21,6 +21,8 @@
 
 <body>
 
+	<form action="ajarad.php" method="post">
+
 <nav class="navbar navbar-expand-md">
 	
  <a class="navbar-brand">
@@ -101,7 +103,7 @@
 
 <div class="form-group">
 
-<input  type="text" class="form-control" placeholder= "NomVendeur" name="quantite_vendue">
+<input  type="text" class="form-control" placeholder= "NomVendeur" name="nom_vendeur">
 
 </div>
 
